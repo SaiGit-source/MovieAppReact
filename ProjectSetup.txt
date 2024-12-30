@@ -1,0 +1,54 @@
+1. Open folder in VScode
+2. Open Terminal
+3. Run 'npm create vite@latest' -> ProjectName: MovieApp
+4. Framework: React
+5. Variant: Javascript
+6. cd .\MovieApp\
+7. package.json contains dependencies for application including React framework
+8. npm install will read dependencies from package.json and install into local machine
+9. run 'npm install'
+10. now we have the node_modules folder -> thats where all dependencies for our project live
+11. index.html -> thats where we actually inject our React code
+12. whatever code we write, we pretty much throw them into this div '<div id="root"></div>'
+13. inject code into '<div id="root"></div>' then React can take control of the codes
+14. run 'npm run dev' -> will development server on local machine and spin up React application on it so we could view it on a specific port 
+15. runs on 'Local:   http://localhost:5173/'
+16. it has hot reload, when i save changes, server will automatically refresh
+17. open 'src' folder -> all .jsx extension -> when you write React code, save as .jsx not .js
+18. if you open main.jsx, we are looking for root div within index.html and rendering the component in that: 'document.getElementById('root')' -> this code gets injected into webpage
+19. .jsx is the combination of javascript and html
+20. lets clear out code in App.jsx and render only a single div
+
+
+App.js
+function App() {
+
+  return (
+      <div>
+
+      </div>
+  )
+}
+this is a component that means, any function in Javascript that returns some kind of JSX code
+
+separate out components, things that are calling APIs, css etc -> create a folder components
+
+conditional rendering in React : we render based on some kind of condition
+
+the other concept is pages: we can navigate between 'pages' using page router -> two files: Home.jsx to display all movies, Favorites.jsx to display a list of favorite movies
+
+States: how do we handle dynamic parts of our components and how do we maintain things like State. count of something or text of users typing in
+
+To setup Page navigation, we setup with something called as "React router", stop server -> enter "npm install react-router-dom"
+
+we create another component called as "NavBar" this will keep the list of all navigation links -> Homepage, Favoritespage etc
+
+for stylesheet, we got to make a new folder "css"
+
+we want to get the list of movies from "www.themoviedb.org" using the API and API Key -> fillout form and create an API key
+create new folder services and create a new file api.js not jsx
+
+useEffects allows us to use all these api functions -> go to Home
+
+Next to make favorite button work, we shouldn't reset state when we refresh application otherwise persist state
+
